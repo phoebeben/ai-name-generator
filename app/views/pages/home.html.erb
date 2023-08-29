@@ -1,4 +1,4 @@
-<div class="flex flex-col">
+<div class="flex flex-col mt-1">
   <div>
     <h1 class="font-bold underline">AI Name Generator</h1>
   </div>
@@ -9,11 +9,18 @@
     <h2>Don't like the options? Simply regenerate!</h2>
   </div>
 
+  <br>
+  <br>
+  <br>
 
-  <h3>What are you generating a name for?</h3>
+
+  <h3>What are you generating a name for? please specify gender</h3>
   <p>e.g baby, dog, company etc.</p>
 
-
-  <p style="color: red;">input form to do</p>
-  <button>generate name!</button>
+  <div data-controller="button-click">
+    <div>
+      <input data-button-click-target="input" type="text">
+    </div>
+    <button data-action="click->button-click#button">generate name!</button>
+  </div>
 </div>
