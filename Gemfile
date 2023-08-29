@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Open AI Gem to integrate chat gpt
+
+gem "ruby-openai"
