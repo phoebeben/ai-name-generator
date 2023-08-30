@@ -1,24 +1,9 @@
-# README
+# Ai Name Generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h3>A name generator where the user can generate 5 name options, utilising chat gpt's OpenAi API</h3>
 
-Things you may want to cover:
+<h3><u>Tech Stack:</u></h5>
+<p>Ruby, Ruby on Rails, JavaScript & Tailwind</p>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h5>Gems used:</h5>
+<p>"ruby-openai" gem to interact with OpenAi</p>
