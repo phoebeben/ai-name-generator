@@ -9,6 +9,5 @@ export default class extends Controller {
   }
 
   button() {
-    console.dir(this.inputTarget.value)
   }
 }

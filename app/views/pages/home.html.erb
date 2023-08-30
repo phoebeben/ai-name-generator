@@ -19,8 +19,10 @@
 
   <div data-controller="button-click">
     <div>
-      <input data-button-click-target="input" type="text">
+    <%= form_with url: "/results", method: :post do |form| %>
+    <%= form.text_field :input%>
+    <%= form.button 'generate resutls'%>
+    <% end %>
     </div>
-    <button data-action="click->button-click#button">generate name!</button>
   </div>
 </div>
