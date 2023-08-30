@@ -12,7 +12,8 @@ class ResultsController < ApplicationController
         temperature: 0.7
       }
     )
-    @response = response.dig('choices', 0, 'message', 'content')
+    split = response.dig('choices', 0, 'message', 'content').split
+    @response = split.reject { |v| split.index(v).even? }
   end
     # response = client.ChatCompletetion.create(
     #   parameters: {

@@ -5,22 +5,11 @@
       to keep them when you regenerate your results</h5>
   </div>
 
-  <%= @response %>
   <div class="card-container">
-    <div class="mt-20 bg-slate-100 w-20">
-      <p>result 1</p>
-    </div>
-    <div class="mt-20 bg-slate-100 w-20">
-      <p>result 2</p>
-    </div>
-    <div class="mt-20 bg-slate-100 w-20">
-      <p>result 3</p>
-    </div>
-    <div class="mt-20 bg-slate-100 w-20">
-      <p>result 4</p>
-    </div>
-    <div class="mt-20 bg-slate-100 w-20">
-      <p>result 5</p>
-    </div>
+    <% @response.each do |result| %>
+      <div class="mt-20 bg-slate-100 w-20">
+        <p><%= result %></p>
+      </div>
+    <% end %>
   </div>
 </div>

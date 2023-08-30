@@ -17,7 +17,7 @@
   <h3>What are you generating a name for? please specify gender</h3>
   <p>e.g baby, dog, company etc.</p>
 
-  <div data-controller="button-click">
+  <div>
     <div>
     <%= form_with url: "/results", method: :post, data: { turbo: false } do |form| %>
     <%= form.text_field :input%>
