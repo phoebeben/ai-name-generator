@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get '/', to: 'pages#home'
-  get '/results', to: 'results#api_call'
   post '/results', to: 'results#api_call'
+  get '/results', to: 'results#api_call'
 end

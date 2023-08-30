@@ -19,7 +19,7 @@
 
   <div data-controller="button-click">
     <div>
-    <%= form_with url: "/results", method: :post do |form| %>
+    <%= form_with url: "/results", method: :post, data: { turbo: false } do |form| %>
     <%= form.text_field :input%>
     <%= form.button 'generate resutls'%>
     <% end %>
