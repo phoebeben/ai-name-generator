@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  font-family: 'Borel', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Source Code Pro', monospace;
+  }
