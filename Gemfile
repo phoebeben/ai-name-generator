@@ -79,3 +79,7 @@ end
 # Open AI Gem to integrate chat gpt
 
 gem "ruby-openai"
+
+# Font awesome gem
+
+gem 'font-awesome-rails'

@@ -7,7 +7,11 @@ module.exports = {
     './app/views/**/*',
     ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        my_color: '#4dcb7a',
+      }
+    },
   },
   plugins: [],
 }

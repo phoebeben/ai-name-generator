@@ -1,30 +1,22 @@
 <div class="container">
-  <div class="mt-24">
-    <p class="text-center tracking-tighter" style="font-size: 50px">AI Name Generator</p>
+  <div class="mt-4">
+    <p class="text-center text-purple-500 tracking-widest font-semibold text-5xl">AI Name Generator</p>
   </div>
 
-  <div class="mt-32">
-    <h2>This name generator utilises chat gpt and will generate you
-    5 names for your chosen subject</h2>
-    <h2>Don't like the options? Simply regenerate!</h2>
+  <div class="mt-10">
+    <h1 class="text-center text-lg underline decoration-sky-500">An AI-powered name generator</h1>
+    <h2 class="text-center mt-2">Simply type what you want to generate a name for and you will be provided with 5 options.</h2>
+  </div>
+  <div class="flex" style="justify-content: center;">
+    <i class="fa-solid fa-info mt-[20px] mr-[10px] text-purple-600"></i><p class="text-center mt-4">A more detailed prompt will yield better results.</p>
   </div>
 
-   <div class="text-lg font-semibold text-slate-500">
-      w-80
-  </div>
-  <br>
-
-  <button class="shadow-lg shadow-indigo-500/40 ">test</button>
-
-  <h3>What are you generating a name for? please specify gender</h3>
-  <p>e.g baby, dog, company etc.</p>
-
-  <div data-controller="form-submit">
-    <div>
-    <%= form_with url: "/results", method: :post, data: { turbo: false, action: "submit->form-submit#popper"  } do |form| %>
-    <%= form.text_field :input%>
-    <%= form.button 'generate resutls'%>
+  <div class="text-center mt-20">
+    <%= form_with url: "/results", method: :post, data: { turbo: false, action: "submit->form-submit#popper" } do |form| %>
+    <%= form.text_field :input, placeholder: "e.g. male dog with brown curly fur", :id => "form-input", :class => "bg-white-200 w-5/12 appearance-none border-2 border-purple-400 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center"%>
+    <br>
+    <%= form.button 'generate results', :class => 'mt-4 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full'%>
     <% end %>
-    </div>
+  </div>
   </div>
 </div>

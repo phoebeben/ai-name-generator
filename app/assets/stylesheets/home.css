@@ -3,4 +3,9 @@ body {
   font-family: 'Roboto', sans-serif;
   font-family: 'Roboto Mono', monospace;
   font-family: 'Source Code Pro', monospace;
+  background-color: rgb(241 245 249);
+  }
+
+  #form-input:focus::placeholder {
+    color: transparent !important;
   }
