@@ -1,14 +1,10 @@
-<div class="container">
-  <h1 id="results-header" class="text-center font-bold">your results</h1>
-  <div>
-    <h5 class="text-center">select the names you like
-      to keep them when you regenerate your results</h5>
-  </div>
+<div class="container grid place-items-center">
+  <h1 class="text-center font-bold mt-10 text-purple-500 text-4xl">your results</h1>
 
-  <div class="card-container">
+  <div class="flex justify-between w-11/12">
     <% @response.each do |result| %>
-      <div class="mt-20 bg-slate-100 w-20">
-        <p><%= result %></p>
+      <div class="mt-20 items-center ml-1 mr-1 bg-violet-500 hover:bg-violet-400 w-32 h-32 rounded-full text-center border-4 border-purple-300 shadow-lg">
+        <p class="mt-12 font-bold text-white"><%= result %></p>
       </div>
     <% end %>
   </div>
