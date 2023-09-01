@@ -9,10 +9,6 @@ export default class extends Controller {
 
   popper() {
     window.Swal = Swal;
-    Swal.fire(
-      'Submitted!',
-      'Generating your results ...',
-      'success'
-    )
+    Swal.showLoading()
   }
 }

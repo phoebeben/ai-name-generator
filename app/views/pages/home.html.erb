@@ -11,7 +11,7 @@
     <i class="fa-solid fa-info mt-[20px] mr-[10px] text-purple-600"></i><p class="text-center mt-4">A more detailed prompt will yield better results.</p>
   </div>
 
-  <div class="text-center mt-20">
+  <div data-controller="form-submit" class="text-center mt-20">
     <%= form_with url: "/results", method: :post, data: { turbo: false, action: "submit->form-submit#popper" } do |form| %>
     <%= form.text_field :input, placeholder: "e.g. male dog with brown curly fur", :id => "form-input", :class => "bg-white-200 w-5/12 appearance-none border-2 border-purple-400 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center", autocomplete: "off"%>
     <br>
