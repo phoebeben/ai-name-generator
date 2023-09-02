@@ -13,7 +13,7 @@ class ResultsController < ApplicationController
     #   }
     # )
     # returned_result = response.dig('choices', 0, 'message', 'content').split(".")
-    # @response = clean_result(returned_result)4
+    # @response = clean_result(returned_result)
     @response = ["result 1", "result 2", "result 3", "result 4", "result 5"]
   end
 

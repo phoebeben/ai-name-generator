@@ -14,6 +14,22 @@ export default class extends Controller {
       e.srcElement.classList.toggle("outline")
       e.srcElement.classList.toggle("outline-cyan-300")
       e.srcElement.classList.toggle("bg-violet-400")
+      e.srcElement.classList.toggle("active")
     };
+  }
+
+  regenerateResults() {
+    console.log("connected")
+    const results = this.#getApiValues();
+    console.log(results)
+  }
+
+  #getApiValues() {
+    const results = document.getElementsByClassName("active")
+    const apiValues = [];
+    for (var i = 0; i < results.length; i++) {
+      apiValues.push(results[i].innerText)
+    }
+    return apiValues;
   }
 }
