@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get '/', to: 'pages#home'
+  root 'pages#home'
   post '/results', to: 'results#api_call'
   get '/results', to: 'results#api_call'
   post '/results/regenerate_results', to: 'results#regenerate_results'
