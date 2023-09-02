@@ -1,9 +1,9 @@
-<div class="container grid place-items-center">
+<div class="container grid place-items-center" data-controller="regenerate">
   <h1 class="text-center font-bold mt-10 text-purple-500 text-5xl">your results</h1>
 
   <div class="flex justify-between w-11/12">
     <% @response.each do |result| %>
-      <div class="mt-20 items-center ml-1 mr-1 bg-violet-500 hover:bg-violet-400 w-32 h-32 rounded-full text-center border-4 border-purple-300 shadow-lg">
+      <div data-action="click->regenerate#select" data-regenerate-target="result" class="mt-20 items-center ml-1 mr-1 bg-violet-500 hover:bg-violet-400 w-32 h-32 rounded-full text-center border-4 border-purple-300 shadow-lg">
         <p class="mt-12 font-bold text-white"><%= result %></p>
       </div>
     <% end %>
