@@ -33,8 +33,15 @@ export default class extends Controller {
       return response.json();
     }).then(data => {
       console.log(data)
+      const divs = document.getElementsByClassName("results")
+      const selected = document.getElementsByClassName("active")
+      for (var i = 0; i < divs.length; i++) {
+        divs[i].innerText = data[i]
+        divs[i].classList.remove("outline")
+        divs[i].classList.remove("bg-violet-400")
+        divs[i].classList.add("items-center")
+      }
     })
-
   }
 
   #getApiValues() {
