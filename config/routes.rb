@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/', to: 'pages#home'
   post '/results', to: 'results#api_call'
   get '/results', to: 'results#api_call'
+  post '/results/regenerate_results', to: 'results#regenerate_results'
 end

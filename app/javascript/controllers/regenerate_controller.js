@@ -21,7 +21,18 @@ export default class extends Controller {
   regenerateResults() {
     console.log("connected")
     const results = this.#getApiValues();
-    console.log(results)
+    const message = fetch('/results/regenerate_results', {
+      method: "POST",
+      body: JSON.stringify(results)
+    }).then(response => {
+      if(!response.ok) {
+        throw new Error("Response not ok")
+      }
+      return response.json();
+    }).then(data => {
+      console.log(data)
+    })
+
   }
 
   #getApiValues() {
