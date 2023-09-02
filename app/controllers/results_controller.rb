@@ -21,8 +21,9 @@ class ResultsController < ApplicationController
   def regenerate_results
     request_data = JSON.parse(request.body.read)
     input = request_data['input']
-    results = request_data['results'].values[0].join(" and ")
-    prompt = "generate 5 names for a #{input}. i want #{results} to be the the first 2 results (without changing them). i want
+    results = request_data['results'].values[0]
+    results_joined = results.join(" and ")
+    prompt = "generate 5 names for a #{input}. i want the first #{results.length} results to be #{results_joined}. i want
     max 5 results"
     client = OpenAI::Client.new
     response = client.chat(
