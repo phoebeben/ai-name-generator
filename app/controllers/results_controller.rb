@@ -15,12 +15,16 @@ class ResultsController < ApplicationController
     # )
     # returned_result = response.dig('choices', 0, 'message', 'content').split(".")
     # @response = clean_result(returned_result)
+    @input = params[:input]
     @response = ["result 1", "result 2", "result 3", "result 4", "result 5"]
   end
 
   def regenerate_results
     request_data = JSON.parse(request.body.read)
-    render json: request_data.to_json
+    input = request_data['input']
+    results = request_data['results'].values[0]
+    # client = OpenAI::Client.new
+    render json: results.to_json
   end
 
   private

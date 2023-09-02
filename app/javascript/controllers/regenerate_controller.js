@@ -20,10 +20,12 @@ export default class extends Controller {
 
   regenerateResults() {
     console.log("connected")
-    const results = this.#getApiValues();
+    const results = { values: this.#getApiValues() };
+    const input = { input: document.getElementById("input").innerText};
+    const requestData = { results, input }
     const message = fetch('/results/regenerate_results', {
       method: "POST",
-      body: JSON.stringify(results)
+      body: JSON.stringify(requestData)
     }).then(response => {
       if(!response.ok) {
         throw new Error("Response not ok")
