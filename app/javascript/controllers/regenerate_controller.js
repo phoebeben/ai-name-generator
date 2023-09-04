@@ -15,12 +15,14 @@ export default class extends Controller {
       e.srcElement.classList.toggle("outline-cyan-300")
       e.srcElement.classList.toggle("bg-violet-400")
       e.srcElement.classList.toggle("active")
+      e.srcElement.classList.toggle("inactive")
     };
   }
 
   regenerateResults() {
     console.log("connected")
     const results = { values: this.#getApiValues() };
+    console.log(results.values)
     const input = { input: document.getElementById("input").innerText};
     const requestData = { results, input }
     const message = fetch('/results/regenerate_results', {
@@ -42,6 +44,7 @@ export default class extends Controller {
         divs[i].classList.remove("outline")
         divs[i].classList.remove("bg-violet-400")
         divs[i].classList.remove("outline-cyan-300")
+        divs[i].classList.remove("active")
       }
     })
   }

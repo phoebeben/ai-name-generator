@@ -3,7 +3,7 @@
 
   <div class="flex justify-between">
     <% @response.each do |result| %>
-      <div data-action="click->regenerate#select" data-regenerate-target="result" class="divs mt-20 items-center ml-1 mr-1 bg-violet-500 hover:bg-violet-400 w-40 h-40 rounded-full text-center border-4 border-purple-300 shadow-lg">
+      <div data-action="click->regenerate#select" data-regenerate-target="result" class="inactive divs mt-20 items-center ml-1 mr-1 bg-violet-500 hover:bg-violet-400 w-40 h-40 rounded-full text-center border-4 border-purple-300 shadow-lg">
         <p class="results mt-12 font-bold text-white text-base"><%= result %></p>
       </div>
     <% end %>
