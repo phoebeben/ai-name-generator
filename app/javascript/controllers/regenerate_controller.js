@@ -3,9 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="regenerate"
 export default class extends Controller {
   static targets = ["result"]
-  connect() {
-    console.log("connected")
-  }
 
   select(e) {
     console.dir(e.srcElement.innerText)
@@ -34,17 +31,13 @@ export default class extends Controller {
       return response.json();
     }).then(data => {
       console.log(data)
-      const paras = document.getElementsByClassName("results")
-      const divs = document.getElementsByClassName("divs")
-      for (var i = 0; i < paras.length; i++) {
-        paras[i].innerText = data[i]
-      }
+      const active = document.getElementsByClassName("divs")
+      const divs = document.getElementsByClassName("inactive")
+      console.dir(divs[0].childNodes[1])
+      console.log(active)
       for (var i = 0; i < divs.length; i++) {
-        divs[i].classList.remove("outline")
-        divs[i].classList.remove("bg-violet-400")
-        divs[i].classList.remove("outline-cyan-300")
-        divs[i].classList.remove("active")
-      }
+        divs[i].childNodes[1].innerText = data[i]
+      };
     })
   }
 
