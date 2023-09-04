@@ -22,9 +22,10 @@ class ResultsController < ApplicationController
     request_data = JSON.parse(request.body.read)
     input = request_data['input']
     results = request_data['results'].values[0]
+    total_results = 5
+    number_to_generate = 5 - results.length
     results_joined = results.join(" and ")
-    prompt = "generate 5 names for a #{input}. i want the first #{results.length} results to be #{results_joined}. i want
-    max 5 results"
+    prompt = "generate #{number_to_generate} names for a #{input}. I don't want the names #{results_joined} to be included."
     client = OpenAI::Client.new
     response = client.chat(
       parameters: {

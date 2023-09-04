@@ -22,7 +22,6 @@ export default class extends Controller {
   regenerateResults() {
     console.log("connected")
     const results = { values: this.#getApiValues() };
-    console.log(results.values)
     const input = { input: document.getElementById("input").innerText};
     const requestData = { results, input }
     const message = fetch('/results/regenerate_results', {
