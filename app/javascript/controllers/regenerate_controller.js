@@ -14,7 +14,6 @@ export default class extends Controller {
       e.srcElement.classList.toggle("outline")
       e.srcElement.classList.toggle("outline-cyan-300")
       e.srcElement.classList.toggle("bg-violet-400")
-      e.srcElement.classList.toggle("bg-violet-500")
       e.srcElement.classList.toggle("active")
     };
   }
