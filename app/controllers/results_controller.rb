@@ -13,7 +13,7 @@ class ResultsController < ApplicationController
         temperature: 0.7
       }
     )
-    returned_result = response.dig('choices', 0, 'message', 'content').split(".")
+    returned_result = response.dig('choices', 0, 'message', 'content').split('.')
     @response = clean_result(returned_result)
     @input = params[:input]
   end
@@ -22,7 +22,6 @@ class ResultsController < ApplicationController
     request_data = JSON.parse(request.body.read)
     input = request_data['input']
     results = request_data['results'].values[0]
-    total_results = 5
     number_to_generate = 5 - results.length
     results_joined = results.join(" and ")
     prompt = "generate #{number_to_generate} names for a #{input}. I don't want the names #{results_joined} to be included."
@@ -34,7 +33,7 @@ class ResultsController < ApplicationController
         temperature: 1
       }
     )
-    returned_result = response.dig('choices', 0, 'message', 'content').split(".")
+    returned_result = response.dig('choices', 0, 'message', 'content').split('.')
     response = clean_result(returned_result)
     render json: response.to_json
   end
@@ -44,7 +43,7 @@ class ResultsController < ApplicationController
   def clean_result(array)
     clean_results = []
     array.each do |result|
-      result.gsub!(/[\n\d]/, "")
+      result.gsub!(/[\n\d]/, '')
       clean_string = result
       clean_results << clean_string
     end
