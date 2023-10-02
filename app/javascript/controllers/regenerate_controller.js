@@ -5,8 +5,6 @@ export default class extends Controller {
   static targets = ["result"]
 
   select(e) {
-    console.dir(e.srcElement.innerText)
-    console.dir(e.srcElement)
     if(e.srcElement.localName === "div") {
       e.srcElement.classList.toggle("outline")
       e.srcElement.classList.toggle("outline-cyan-300")
@@ -17,7 +15,6 @@ export default class extends Controller {
   }
 
   regenerateResults() {
-    console.log("connected")
     const results = { values: this.#getApiValues() };
     const input = { input: document.getElementById("input").innerText};
     const requestData = { results, input }
@@ -30,11 +27,8 @@ export default class extends Controller {
       }
       return response.json();
     }).then(data => {
-      console.log(data)
       const active = document.getElementsByClassName("divs")
       const divs = document.getElementsByClassName("inactive")
-      console.dir(divs[0].childNodes[1])
-      console.log(active)
       for (var i = 0; i < divs.length; i++) {
         divs[i].childNodes[1].innerText = data[i]
       };
