@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import Swal from 'sweetalert2';
 
 // Connects to data-controller="regenerate"
 export default class extends Controller {
@@ -18,6 +19,7 @@ export default class extends Controller {
     const results = { values: this.#getApiValues() };
     const input = { input: document.getElementById("input").innerText};
     const requestData = { results, input }
+    this.popper()
     const message = fetch('/results/regenerate_results', {
       method: "POST",
       body: JSON.stringify(requestData)
@@ -32,6 +34,7 @@ export default class extends Controller {
       for (var i = 0; i < divs.length; i++) {
         divs[i].childNodes[1].innerText = data[i]
       };
+      Swal.close()
     })
   }
 
@@ -42,5 +45,10 @@ export default class extends Controller {
       apiValues.push(results[i].innerText)
     }
     return apiValues;
+  }
+
+  popper() {
+    window.Swal = Swal;
+    Swal.showLoading()
   }
 }
